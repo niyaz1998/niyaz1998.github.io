@@ -1,0 +1,21 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="paint0_radial_427_2602" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(67.7632 14.6667) rotate(109.465) scale(60.8088 48.605)">
+<stop stop-color="#B6E1FA"/>
+<stop offset="1" stop-color="#C7EAFD" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="30" y="29" width="35" height="43" rx="5" fill="url(#paint0_radial_427_2602)"/>
+<path d="M65 65.2812V34C65 31.2386 62.7614 29 60 29H35C32.2386 29 30 31.2386 30 34V67C30 69.7614 32.2386 72 35 72H65C67.7614 72 70 69.7614 70 67V47.125C70 46.0204 69.1046 45.125 68 45.125V45.125" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<rect x="36" y="42" width="9" height="9" rx="2" fill="#DCEEFF" stroke="#70B8FA" stroke-width="2"/>
+<line x1="36" y1="56" x2="45" y2="56" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="56" x2="59" y2="56" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="43" x2="59" y2="43" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="36" y1="37" x2="59" y2="37" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="47" x2="59" y2="47" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="51" x2="59" y2="51" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="36" y1="60" x2="45" y2="60" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="60" x2="59" y2="60" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="36" y1="64" x2="45" y2="64" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+<line x1="50" y1="64" x2="59" y2="64" stroke="#70B8FA" stroke-width="2" stroke-linecap="round"/>
+</svg>
