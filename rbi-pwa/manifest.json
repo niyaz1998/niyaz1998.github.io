@@ -1,11 +1,12 @@
 {
-    "name": "invest",
-    "short_name": "invest",
-    "start_url": ".",
+    "name": "Росбанк Инвест",
+    "short_name": "Инвест",
+    "start_url": "/rbi-pwa/",
+    "id": "/rbi-pwa/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Приложение для клиентов Росбанка",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
