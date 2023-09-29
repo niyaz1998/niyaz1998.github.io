@@ -34,7 +34,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "1728498120";
+    var serviceWorkerVersion = "2690506865";
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
@@ -72,8 +72,7 @@
 <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-      var basePath = process.env.BASE_URL;
-        navigator.serviceWorker.register(basePath + "firebase-messaging-sw.js");
+        navigator.serviceWorker.register(window.location.pathname + "/firebase-messaging-sw.js");
       });
     }
 </script>
