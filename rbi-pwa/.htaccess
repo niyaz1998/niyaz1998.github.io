@@ -1,0 +1,2 @@
+# fallback, чтобы не отображать 404
+FallbackResource /index.html
