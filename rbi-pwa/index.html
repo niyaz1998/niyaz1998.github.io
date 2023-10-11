@@ -54,6 +54,7 @@
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
+        src: "main.dart.js?version=" + serviceWorkerVersion,
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
@@ -61,6 +62,7 @@
         }
       });
     });
+    console.log("main.dart.js?version=" + serviceWorkerVersion);
 </script>
 
 <!-- for syncfusion_flutter_pdfviewer -->
