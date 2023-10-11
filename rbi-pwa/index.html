@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- этот стиль нужен, чтобы на iphone был правильный паддинг,
-    так как там SafeArea в вебе не работает
-    Источник:
-    https://github.com/flutter/flutter/issues/84833#issuecomment-1676625367 -->
-    <style>
-    #host {
-      height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-      width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
-      position: fixed;
-      z-index: 1;
-      left: env(safe-area-inset-left);
-      top: env(safe-area-inset-top);
-      overflow: hidden;
-      padding: 0px;
-      margin: 0px;
-      user-select: none;
-      touch-action: none;
-    }
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
 
-    </style>
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
+
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
     <base href="/rbi-pwa/">
 
     <meta charset="UTF-8">
@@ -33,6 +26,8 @@
     <meta name="apple-mobile-web-app-title" content="invest">
     <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+    <!-- Prevent flickering during loading. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png"/>
 
@@ -41,8 +36,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "2699063721";
-
+    var serviceWorkerVersion = "2927654295";
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
@@ -67,7 +61,6 @@
         }
       });
     });
-
 </script>
 
 <!-- for syncfusion_flutter_pdfviewer -->
@@ -75,7 +68,6 @@
 <!-- for syncfusion_flutter_pdfviewer -->
 <script type="text/javascript">
    pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
-
 </script>
 
 <!-- firebase messaging -->
@@ -85,7 +77,6 @@
         navigator.serviceWorker.register("/firebase-messaging-sw.js");
       });
     }
-
 </script>
 </body>
 </html>
