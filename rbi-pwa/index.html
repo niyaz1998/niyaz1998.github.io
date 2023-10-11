@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
+    <!-- этот стиль нужен, чтобы на iphone был правильный паддинг,
+    так как там SafeArea в вебе не работает
+    Источник:
+    https://github.com/flutter/flutter/issues/84833#issuecomment-1676625367 -->
+    <style>
+    #host {
+      height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
+      position: fixed;
+      z-index: 1;
+      left: env(safe-area-inset-left);
+      top: env(safe-area-inset-top);
+      overflow: hidden;
+      padding: 0px;
+      margin: 0px;
+      user-select: none;
+      touch-action: none;
+    }
 
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
+    </style>
     <base href="/rbi-pwa/">
 
     <meta charset="UTF-8">
@@ -34,7 +41,8 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "3387983390";
+    var serviceWorkerVersion = "2699063721";
+
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
@@ -59,6 +67,7 @@
         }
       });
     });
+
 </script>
 
 <!-- for syncfusion_flutter_pdfviewer -->
@@ -66,6 +75,7 @@
 <!-- for syncfusion_flutter_pdfviewer -->
 <script type="text/javascript">
    pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
+
 </script>
 
 <!-- firebase messaging -->
@@ -75,6 +85,7 @@
         navigator.serviceWorker.register("/firebase-messaging-sw.js");
       });
     }
+
 </script>
 </body>
 </html>
