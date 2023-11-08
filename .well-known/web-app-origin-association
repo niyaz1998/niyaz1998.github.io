@@ -1,0 +1,12 @@
+{
+  "web_apps": [
+    {
+      "manifest": "https://niyaz1998.github.io/rbi-pwa/manifest.json",
+      "details": {
+        "paths": [
+          "/rbi-pwa/*"
+        ]
+      }
+    }
+  ]
+}

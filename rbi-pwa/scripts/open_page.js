@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+    
+
+<!-- HEADER localize.jsp MUST already be included in the calling script -->
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="libs/theme/assets/images/favicon.ico" type="image/x-icon"/>
+
+<title>ID Rosbank</title>
+
+<link rel="stylesheet" type="text/css" href="css/rosbank/main.css" />
+<link rel="stylesheet" type="text/css" href="css/rosbank/enter-form.css" />
+
+
+<script src="libs/jquery_3.4.1/jquery-3.4.1.js"></script>
+<script src="js/rosbank/vendors/floatingFormLabels.min.js"></script>
+<script src="js/rosbank/vendors/jquery.mask.min.js"></script>
+
+
+<script src="js/rosbank/common.js"></script>
+
+</head>
+<body onload="checkSessionKey()">
+    <!-- header -->
+    <header><div class="page-header">
+    <div class="page-logo" />
+</div>
+</header>
+
+    <main class="rosbank">
+            <!-- product-title -->
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    // Handle form submission preventing double submission.
+    $(document).ready(function() {
+       try {
+            // Подменяем ссылку с согласием, если есть параметр app=hermitage
+            const param = new URLSearchParams(window.location.search);
+            if (param.get('app') === 'hermitage') {
+                $('#agreementPdf').prop('href', 'https://api.rosbank.ru/doc/politika-pao-rosbank-v-otnoshenii-obrabotki-personalnykh-dannykh-i-svedeniya-o-realizuemykh-trebovaniyakh-k-zaschite-personalnykh-dannykh.pdf');
+            }
+        } catch (e) {}
+		
+        $.fn.preventDoubleSubmission = function() {
+            $(this).on('submit',function(e){
+                var $form = $(this);
+                if ($form.data('submitted') === true) {
+                    // Previously submitted - don't submit again.
+                    e.preventDefault();
+                    console.warn("Prevented a possible double submit event");
+                } else {
+                    e.preventDefault();
+
+                    var isEmailUsernameEnabled = JSON.parse("false");
+                    var tenantName = getParameterByName("tenantDomain");
+                    var userName = document.getElementById("username");
+                    var usernameUserInput = document.getElementById("usernameUserInput");
+
+                    if (usernameUserInput) {
+                        var usernameUserInputValue = usernameUserInput.value.trim();
+
+                        if (getParameterByName("isSaaSApp") === "false") {
+
+                            if ((!isEmailUsernameEnabled) && (usernameUserInputValue.split("@").length > 1)) {
+                                userName.value = usernameUserInputValue;
+                            }
+                            else {
+                                userName.value = usernameUserInputValue + "@" + tenantName;
+                            }
+                        }
+                        else {
+                            userName.value = usernameUserInputValue;
+                        }
+                    }
+
+                    /**
+                     * Custom: добавлено условие выбранного флажка
+                     */
+                    const agreementFlag = $('input[name="agreementPers"]').prop('checked');
+                    if (userName.value && agreementFlag) {
+                        $.ajax({
+                            type: "GET",
+                            url: "/logincontext?sessionDataKey=" + getParameterByName("sessionDataKey") +
+                                "&relyingParty=" + getParameterByName("relyingParty") + "&tenantDomain=" + tenantName,
+                            success: function (data) {
+                                if (data && data.status == 'redirect' && data.redirectUrl && data.redirectUrl.length > 0) {
+                                    window.location.href = data.redirectUrl;
+                                } else {
+                                    // Mark it so that the next submit can be ignored.
+                                    $form.data('submitted', true);
+                                    document.getElementById("loginForm").submit();
+                                }
+                            },
+                            cache: false
+                        });
+                    }
+                }
+            });
+
+            return this;
+        };
+        $('#loginForm').preventDoubleSubmission();
+    });
+</script>
+
+
+
+
+
+
+
+<div class="page-form">
+    <h1>Вход через Росбанк</h1>
+    <div class="enter-form">
+        <form action="../oauth2/authorize" method="post" id="loginForm">
+
+    
+    <input id="tocommonauth" name="tocommonauth" type="hidden" value="true">
+    
+
+	<input id="password" name="password" type="hidden" value="***">
+	<input id="username" name="username" type="hidden" value="">
+
+            <div class="phone-wrapper">
+                <div class="ffl-wrapper">
+                    <label class="ffl-label" for="phone">Телефон</label>
+                    <input id="phone" type="text" name="phone">
+                    <div class="field-mask"></div>
+
+
+	    
+
+                </div>
+            </div>
+            <div class="checkbox-wrapper">
+                <label class="checkbox">
+                    <input class="checkbox-field" name="agreementPers" type="checkbox" />
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0H24V24H0V0Z" fill="#F2F2F2"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4392 1.33917L6.92632 14.1098L0 7.38717L1.39295 5.95201L6.83027 11.2294L16.9537 0L18.4392 1.33917Z" transform="translate(3.30469 4.33057)" fill="#E60028"/>
+                        </svg>
+                    </div>
+                    <div class="checkbox-caption">
+                        Нажимая на&nbsp;кнопку «Далее»,<br/> я&nbsp;предоставляю своё <a id="agreementPdf" href="https://api.rosbank.ru/doc/soglasie-na-obrabotki-personalnykh-dannykh-atomaiz.pdf/d">согласие<br/> на&nbsp;обработку персональных данных</a>
+                    </div>
+                </label>
+            </div>
+            <div class="btn-box">
+                <button type="submit" class="Button Button_default" onclick="submitCredentials(event)">
+                    <span class="Button__overlay"></span>
+                    <span class="Button__text">Далее</span>
+                </button>
+            </div>
+
+    <input type="hidden" name="sessionDataKey" value='ccc0a512-2ee9-4486-958f-2fcc7d4aab8d'/>
+
+        </form>
+    </div>
+</div>
+
+    
+
+    
+
+<script>
+
+    let isValid = false;
+
+    $('.ffl-wrapper').floatingFormLabels();
+    $('input[name="agreementPers"]').on('change', function(e) {
+        e.preventDefault();
+        showHideButton();
+    });
+
+    function showHideButton() {
+        if ($('input[name="agreementPers"]').prop('checked') && isValid) {
+            $('.btn-box').addClass('visible');
+            $('input[name="username"]').val($('input[name="phone"]').val().replace(/[^\d]+/g, ''));
+        } else { $('.btn-box').removeClass('visible'); }
+    }
+
+    function onChangePhone(cep, e, field, options) {
+        /**
+        * В ТЗ написано, что может быть только российский номер, а в макете может быть любой.
+        * Раскомментировать нужное
+        */
+        /** Устанавливаем маску в зависимости от кода страны */
+        const COUNTRY_MASKS = {
+            rus: '+7 (000) 000-00-00',
+            other: ' 000 0000000',
+            unknown: '0000000000000000'
+        };
+        let mask;
+        const countryCode = ['1','7','20','21','27','30','31','32','33','34','36','39','40','41','43','44','45','46','47','48','49','51','52','53','54','55','56','57','58','60','61','62','63','64','65','66','81','82','84','86','90','91','92','93','94','95','98','212','220','221','222','223','224','225','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','260','261','262','263','264','265','266','267','268','269','298','299','350','351','352','353','354','355','356','357','358','359','370','371','372','374','375','376','377','378','380','381','385','386','387','389','420','421','500','501','502','503','504','505','506','507','508','509','590','591','592','593','594','595','596','597','598','599','670','671','672','673','674','675','676','677','678','679','681','682','683','684','685','686','687','688','689','690','691','692','850','852','853','855','856','880','886','960','961','962','963','964','965','966','967','968','969','971','972','973','974','976','977','992','993','994','995','996','998','1242','1246','1264','1268','1284','1340','1345','1441','1473','1649','1664','1670','1671','1706','1758','1767','1784','1787','1809','1868','1869','1876','1905'];
+
+        const codeCountry = countryCode.find(function(country) {
+            const code = cep.replace(/[+ ()]/g, '').substr(0, country.length);
+            return code === country;
+        }) || '0';
+
+        switch (true) {
+            case cep.substr(0, 2) === '+7': mask = COUNTRY_MASKS.rus; break;
+            case typeof codeCountry !== 'undefined': mask = '+' + codeCountry.replace(/\d/g, '0') + COUNTRY_MASKS.other; break;
+            default: mask = COUNTRY_MASKS.unknown;
+        }
+        /** Только Россия */
+        // const mask = '+7 (000) 000-00-00';
+
+        field.mask(mask, options);
+
+        // Устанавливаем placeholder
+        const value = field.val();
+        $('.field-mask').html(value.length < 2 ? '' : value + mask.substr(value.length));
+
+        isValid = mask.length === value.length;
+        showHideButton();
+    }
+
+    const options =  {
+        onKeyPress: onChangePhone,
+        onChange: onChangePhone,
+    };
+
+    $('input[name="phone"]')
+        .on('focus',  function(e) {
+            if (!e.target.value) { $(this).val('+').focus(); }
+            $('#phone').removeClass('error');
+            $('.field-mask').removeClass('invisible');
+        })
+        .on('blur',  function(e) {
+            if (e.target.value === '+') { $(this).val('').blur(); }
+        })
+    /**
+     * В ТЗ написано, что может быть только российский номер, а в макете может быть любой.
+     * Раскомментировать нужное
+     */
+        .mask('+0000000000000', options);
+
+
+</script>
+
+
+                                    
+                    
+
+                    
+                    
+    </main>
+
+    <script>
+        function checkSessionKey() {
+            $.ajax({
+                type: "GET",
+                url: "/logincontext?sessionDataKey=" + getParameterByName("sessionDataKey") + "&relyingParty=" + getParameterByName("relyingParty") + "&tenantDomain=" + getParameterByName("tenantDomain"),
+                success: function (data) {
+                    if (data && data.status == 'redirect' && data.redirectUrl && data.redirectUrl.length > 0) {
+                        window.location.href = data.redirectUrl;
+                    }
+                },
+                cache: false
+            });
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, '\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        $(document).ready(function () {
+            $('.main-link').click(function () {
+                $('.main-link').next().hide();
+                $(this).next().toggle('fast');
+                var w = $(document).width();
+                var h = $(document).height();
+                $('.overlay').css("width", w + "px").css("height", h + "px").show();
+            });
+
+            $('.overlay').click(function () {
+                $(this).hide();
+                $('.main-link').next().hide();
+            });
+
+            
+        });
+
+        function myFunction(key, value, name) {
+            var object = document.getElementById(name);
+            var domain = object.value;
+
+
+            if (domain != "") {
+                document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=ccc0a512-2ee9-4486-958f-2fcc7d4aab8d&domain=" +
+                        domain;
+            } else {
+                document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=ccc0a512-2ee9-4486-958f-2fcc7d4aab8d";
+            }
+        }
+
+        function handleNoDomain(elem, key, value) {
+            var linkClicked = "link-clicked";
+            if ($(elem).hasClass(linkClicked)) {
+                console.warn("Preventing multi click.")
+            } else {
+                $(elem).addClass(linkClicked);
+                
+                document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                    "&sessionDataKey=ccc0a512-2ee9-4486-958f-2fcc7d4aab8d" +
+                    "";
+            }
+        }
+
+        window.onunload = function(){};
+
+        function changeUsername (e) {
+            document.getElementById("changeUserForm").submit();
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
