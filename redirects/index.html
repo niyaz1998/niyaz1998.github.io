@@ -3,11 +3,16 @@
 <body>
 <script type="text/javascript">
 window.onload = function() {
+    console.log(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     var deeplink = urlParams.get('deeplink');
+    console.log(deeplink);
     deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+    console.log(deeplink);
     var fallback = urlParams.get('fallback');
+    console.log(fallback);
     fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
+    console.log(fallback);
 
     // Deep link to your app goes here
     document.getElementById("l").src = deeplink;
