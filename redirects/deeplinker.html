@@ -89,7 +89,7 @@ function DeepLinker(options) {
 
 var linker = new DeepLinker({
   onIgnored: function() {
-    console.log('browser failed to respond to the deep link');
+    window.location = fallback;
   },
   onFallback: function() {
     window.location = fallback;
