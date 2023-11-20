@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    var deeplink = urlParams.get('deeplink');
+    deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+    var fallback = urlParams.get('fallback');
+    fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
+
+    // Deep link to your app goes here
+    document.getElementById("l").src = deeplink;
+
+    setTimeout(function() {
+        // Link to the App Store should go here -- only fires if deep link fails
+        window.location = fallback;
+    }, 500);
+};
+</script>
+<iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+</body>
+</html>
