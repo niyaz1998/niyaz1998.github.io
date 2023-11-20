@@ -2,17 +2,18 @@
 <html>
 <body>
 <script type="text/javascript">
-    console.log(window.location.search);
-    const urlParams = new URLSearchParams(window.location.search);
-    var deeplink = urlParams.get('deeplink');
-    console.log(deeplink);
-    deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
-    console.log(deeplink);
-    var fallback = urlParams.get('fallback');
-    console.log(fallback);
-    fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-    console.log(fallback);
+// этот скрипт открывает пытается открыть ссылку и открывает другую, если не получилось открыть
+// ссылки чтобы открывать скрипт берет из query parameters 'deeplink' и 'fallback'
+// "вдохновлялся" вот эти кодом: https://gist.github.com/diachedelic/0d60233dab3dcae3215da8a4dfdcd434
+// так же есть другие решения, которые я решил пока не использовать
+// так же есть вот такое решение: https://stackoverflow.com/a/28595351
+// и есть документация для Android: https://developer.chrome.com/docs/multidevice/android/intents/
 
+const urlParams = new URLSearchParams(window.location.search);
+var deeplink = urlParams.get('deeplink');
+deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+var fallback = urlParams.get('fallback');
+fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
 
 function DeepLinker(options) {
   if (!options) {
@@ -95,7 +96,7 @@ function DeepLinker(options) {
 
 var linker = new DeepLinker({
   onIgnored: function() {
-    console.log('browser failed to respond to the deep link');
+    window.location = fallback;
   },
   onFallback: function() {
     window.location = fallback;
@@ -105,10 +106,7 @@ var linker = new DeepLinker({
   },
 });
 
-
-setTimeout(function() {
-    linker.openURL(deeplink);
-}, 5000);
+linker.openURL(deeplink);
 </script>
 <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
 </body>
