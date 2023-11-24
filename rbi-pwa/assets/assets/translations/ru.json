@@ -367,6 +367,7 @@
   "ordersStatuses": "Статусы заявок",
   "enableNotificationsInPhoneSettings": "Подключите уведомления в настройках телефона",
   "enableNotificationsInBrowserSettings": "Включите уведомления в настройках браузера и обновите страницу",
+  "notificationsAreNotSupportedByBrowser": "Похоже ваш браузер не поддерживает уведомления\nПопробуйте установить приложение на главный экран",
   "notificationsDisabledBrowserSettings": "Вам надо включить уведомления в настройках браузера",
   "goToSettings": "В настройки",
   "toTradeTestPassNeeded": "Для торговли нужно пройти тест",
