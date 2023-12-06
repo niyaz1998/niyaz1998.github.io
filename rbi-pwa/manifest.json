@@ -1,36 +1,84 @@
 {
-    "name": "Росбанк Инвест",
-    "short_name": "Инвест",
-    "start_url": "/rbi-pwa/",
-    "id": "/rbi-pwa/",
-    "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#FFFFFF",
-    "description": "Приложение для клиентов Росбанка",
-    "orientation": "portrait-primary",
-    "prefer_related_applications": false,
-    "icons": [
-        {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-maskable-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
-        },
-        {
-            "src": "icons/Icon-maskable-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
-        }
-    ]
+  "name": "Росбанк Инвест",
+  "short_name": "Инвест",
+  "start_url": "/rbi-pwa/",
+  "scope": "/rbi-pwa/",
+  "id": "/rbi-pwa/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "description": "Приложение для клиентов Росбанка",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "handle_links": "preferred",
+  "screenshots": [
+    {
+      "src": "/pwa_advertising/narrow/advertising0.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising1.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2195",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising2.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising3.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising4.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising5.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/pwa_advertising/narrow/advertising6.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1235x2194",
+      "form_factor": "narrow"
+    }
+  ]
 }
