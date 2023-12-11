@@ -1813,6 +1813,9 @@ url_launcher_linux
 url_launcher_macos
 url_launcher_platform_interface
 url_launcher_windows
+vector_graphics
+vector_graphics_codec
+vector_graphics_compiler
 webview_flutter
 webview_flutter_platform_interface
 webview_flutter_wkwebview
