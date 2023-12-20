@@ -24,12 +24,16 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "2434803995";
+    const serviceWorkerVersion = "3760895345";
     </script>
+
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
-    <script src="scripts/indexed_db.js" defer></script>
-    <script src="scripts/add_to_home_screen.js" defer></script>
+
+    <!-- JS скрипты-->
+    <script defer src="scripts/indexed_db.js"></script>
+    <script defer src="scripts/web_authn.js"></script>
+    <script defer src="scripts/add_to_home_screen.js"></script>
 </head>
 <body style="">
 
@@ -48,7 +52,7 @@
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        src: "main.dart.js?version=" + serviceWorkerVersion,
+        src: "main.dart.js?version=" + serviceWorkerVersion, // добавление версии, нужно для перезагрузки файла main.dart.js на стороне клиента после его обновления
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
@@ -56,8 +60,6 @@
         }
       });
     });
-
-
 </script>
 
 <!-- for syncfusion_flutter_pdfviewer -->
@@ -65,8 +67,6 @@
 <!-- for syncfusion_flutter_pdfviewer -->
 <script type="text/javascript">
    pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
-
-
 </script>
 
 <!-- firebase messaging -->
@@ -76,8 +76,6 @@
         navigator.serviceWorker.register(window.location.origin + window.location.pathname + "firebase-messaging-sw.js");
       });
     }
-
-
 </script>
 </body>
 </html>
