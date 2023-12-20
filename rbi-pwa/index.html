@@ -24,7 +24,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "3366985922";
+    const serviceWorkerVersion = "1027653317";
     </script>
 
     <!-- This script adds the flutter initialization JS code -->
@@ -73,6 +73,7 @@
 <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
+        console.log('niyaz push', window.location.origin + window.location.pathname + "firebase-messaging-sw.js");
         navigator.serviceWorker.register(window.location.origin + window.location.pathname + "firebase-messaging-sw.js");
       });
     }
