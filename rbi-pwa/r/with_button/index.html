@@ -23,10 +23,12 @@ try {
     fallbackButton.setAttribute('href', fallback);
 
     setTimeout(function() {
-        window.history.back();
+        if (!history.go(-1)) {
+            window.close();
+        }
     }, 5000);
 } catch (e) {
-    console.log(e);
+    console.error(e);
 }
 };
 
