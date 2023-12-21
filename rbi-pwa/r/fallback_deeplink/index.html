@@ -98,7 +98,7 @@ function DeepLinker(options) {
 
 var linker = new DeepLinker({
   onIgnored: function() {
-    // window.location = fallback;
+    window.history.go(-1);
   },
   onFallback: function() {
     window.location = fallback;
