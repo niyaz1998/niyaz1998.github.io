@@ -14,8 +14,8 @@ var deeplink = urlParams.get('deeplink');
 deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
 var fallback = urlParams.get('fallback');
 fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-cansole.log('deeplink', deeplink);
-cansole.log('fallback', fallback);
+console.log('deeplink', deeplink);
+console.log('fallback', fallback);
 
 function DeepLinker(options) {
   if (!options) {
