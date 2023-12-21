@@ -6,6 +6,7 @@
           content="0; url=https://investrosbank.page.link/portfolioAnalyticscert">
     <script type="text/javascript">
 window.onload = function() {
+try {
     console.log(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     var deeplink = urlParams.get('deeplink');
@@ -24,6 +25,9 @@ window.onload = function() {
     setTimeout(function() {
         window.history.back();
     }, 5000);
+} catch (e) {
+    console.log(e);
+}
 };
 
     </script>
