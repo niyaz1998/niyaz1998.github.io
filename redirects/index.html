@@ -3,29 +3,13 @@
 <body>
 <script type="text/javascript">
 window.onload = function() {
-    console.log(window.location.search);
-    const urlParams = new URLSearchParams(window.location.search);
-    var deeplink = urlParams.get('deeplink');
-    console.log(deeplink);
-    deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
-    console.log(deeplink);
-    var fallback = urlParams.get('fallback');
-    console.log(fallback);
-    fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-    console.log(fallback);
-
-    var ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", deeplink);
-    ifrm.style.width = "1px";
-    ifrm.style.height = "1px";
-    ifrm.style.visibility = "hidden";
-    document.body.appendChild(ifrm);
-
     setTimeout(function() {
         // Link to the App Store should go here -- only fires if deep link fails
-        window.location = fallback;
+        window.location = "https://preview.page.link/investtopup.page.link?link=https://www.rosbank.ru/app/trn/indv/?data%3DeyJiaWsiOiIwNDQ1MjUyNTYiLCJmaW8iOiLQk9Cw0LvQuNGD0LvQu9C40L3QsCDQmNGA0LjQvdCwINCS0Y/Rh9C10YHQu9Cw0LLQvtCy0L3QsCIsInJlY2VpdmVyQWNjb3VudCI6IjMwNjAxODEwMjAwMDAwMDAxMTQ0IiwiaGludCI6ItCT0LDQu9C40YPQu9C70LjQvdCwINCY0YDQuNC90LAg0JLRj9GH0LXRgdC70LDQstC%2B0LLQvdCwINCf0L7Qv9C%2B0LvQvdC10L3QuNC1INGB0L7QsdGB0YLQstC10L3QvdC%2B0LPQviDQsdGA0L7QutC10YDRgdC60L7Qs9C%2BINGB0YfRkdGC0LAiLCJib3R0b21TaGVldCI6eyJ0aXRsZSI6ItCf0L7QtNGC0LLQtdGA0LTQuNGC0LUg0LTQtdC50YHRgtCy0LjQtSIsInN1YnRpdGxlIjoi0JTQu9GPINC/0LXRgNC10YXQvtC00LAg0L7QsdGA0LDRgtC90L4g0LIg0KDQvtGB0LHQsNC90Log0JjQvdCy0LXRgdGCINC90LDQttC80LjRgtC1INC90LAg0LrQvdC%2B0L/QutGDIiwiYnV0dG9uVGV4dCI6ItCf0YDQvtC00L7Qu9C20LjRgtGMIiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2ludmVzdHJvc2JhbmsucGFnZS5saW5rL3dlbGNvbWUifX0%253D&apn=ru.rosbank.android.beta&afl=https://apps.rustore.ru/app/ru.rosbank.android.beta&ibi=ru.rosbank.mb.ios.beta";
     }, 5000);
 };
 </script>
+<iframe id="l" width="1" height="1" style="visibility:hidden"
+src="bank100000000012://app/trn/indv/?data=eyJiaWsiOiIwNDQ1MjUyNTYiLCJmaW8iOiLQk9Cw0LvQuNGD0LvQu9C40L3QsCDQmNGA0LjQvdCwINCS0Y/Rh9C10YHQu9Cw0LLQvtCy0L3QsCIsInJlY2VpdmVyQWNjb3VudCI6IjMwNjAxODEwMjAwMDAwMDAxMTQ0IiwiaGludCI6ItCT0LDQu9C40YPQu9C70LjQvdCwINCY0YDQuNC90LAg0JLRj9GH0LXRgdC70LDQstC+0LLQvdCwINCf0L7Qv9C+0LvQvdC10L3QuNC1INGB0L7QsdGB0YLQstC10L3QvdC+0LPQviDQsdGA0L7QutC10YDRgdC60L7Qs9C+INGB0YfRkdGC0LAiLCJib3R0b21TaGVldCI6eyJ0aXRsZSI6ItCf0L7QtNGC0LLQtdGA0LTQuNGC0LUg0LTQtdC50YHRgtCy0LjQtSIsInN1YnRpdGxlIjoi0JTQu9GPINC/0LXRgNC10YXQvtC00LAg0L7QsdGA0LDRgtC90L4g0LIg0KDQvtGB0LHQsNC90Log0JjQvdCy0LXRgdGCINC90LDQttC80LjRgtC1INC90LAg0LrQvdC+0L/QutGDIiwiYnV0dG9uVGV4dCI6ItCf0YDQvtC00L7Qu9C20LjRgtGMIiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2ludmVzdHJvc2JhbmsucGFnZS5saW5rL3dlbGNvbWUifX0="></iframe>
 </body>
 </html>
