@@ -9,13 +9,9 @@ window.onload = function() {
     console.log(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     var deeplink = urlParams.get('deeplink');
-    console.log(deeplink);
     deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
-    console.log(deeplink);
     var fallback = urlParams.get('fallback');
-    console.log(fallback);
     fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-    console.log(fallback);
 
     const link = document.createElement('a');
     link.setAttribute('href', deeplink);
@@ -23,13 +19,10 @@ window.onload = function() {
     link.click();
 
     const fallbackButton = document.getElementById('fallback_link');
-    link.setAttribute('href', fallback);
-    document.body.appendChild(link);
-    link.click();
-
+    fallbackButton.setAttribute('href', fallback);
 
     setTimeout(function() {
-        window.history.go(-1);
+        window.history.back();
     }, 5000);
 };
 
