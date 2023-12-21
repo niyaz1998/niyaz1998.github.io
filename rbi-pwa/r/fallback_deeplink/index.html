@@ -56,7 +56,7 @@ function DeepLinker(options) {
           if (!didHide) {
             options.onFallback();
           }
-        }, 1000);
+        }, 2000);
       }
     }
 
@@ -82,7 +82,7 @@ function DeepLinker(options) {
   this.destroy = bindEvents.bind(null, 'remove');
   this.openURL = function(url) {
     // it can take a while for the dialog to appear
-    var dialogTimeout = 500;
+    var dialogTimeout = 2000;
 
     setTimeout(function() {
       if (hasFocus && options.onIgnored) {
