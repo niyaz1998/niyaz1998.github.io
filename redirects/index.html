@@ -3,6 +3,10 @@
 <body>
 <script type="text/javascript">
 window.onload = function() {
+    function isCustomProtocolSupported(protocol) {
+      return navigator.protocol === protocol + ":";
+    }
+
     console.log(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     var deeplink = urlParams.get('deeplink');
@@ -13,18 +17,16 @@ window.onload = function() {
     console.log(fallback);
     fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
     console.log(fallback);
+    console.log('isCustomProtocolSupported', isCustomProtocolSupported('bank100000000012'));
 
-    const link = document.createElement('a');
-    link.setAttribute('href', deeplink);
-    document.body.appendChild(link);
-    link.click();
-    setTimeout(() => {
-      if (document.hasFocus()) {
-        window.history.go(-1);
-      } else {
+    if (isCustomProtocolSupported('bank100000000012')) {
+        const link = document.createElement('a');
+        link.setAttribute('href', deeplink);
+        document.body.appendChild(link);
+        link.click();
+    } else {
         window.location.replace(fallback);
-      }
-    }, 1000);
+    }
 };
 </script>
 </body>
