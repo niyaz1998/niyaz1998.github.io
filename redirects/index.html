@@ -14,15 +14,18 @@ window.onload = function() {
     fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
     console.log(fallback);
 
-    // Deep link to your app goes here
-    document.getElementById("l").src = deeplink;
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("src", deeplink);
+    ifrm.style.width = "1px";
+    ifrm.style.height = "1px";
+    ifrm.style.visibility = "hidden";
+    document.body.appendChild(ifrm);
 
     setTimeout(function() {
         // Link to the App Store should go here -- only fires if deep link fails
         window.location = fallback;
-    }, 500);
+    }, 5000);
 };
 </script>
-<iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
 </body>
 </html>
