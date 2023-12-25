@@ -1,6 +1,7 @@
 importScripts("https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js");
 importScripts("https://www.gstatic.com/firebasejs/9.10.0/firebase-messaging-compat.js");
 
+/// in case you want to change this file please contact Rosbank Invest team
 const firebaseConfig = {
   apiKey: "AIzaSyASUBSs9AS4CwEQ_6vI4nQyoTXL6fnUA3k",
   authDomain: "rb-invest-prod.firebaseapp.com",
@@ -12,13 +13,4 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-// Necessary to receive background messages:
 const messaging = firebase.messaging();
-
-// Optional:
-messaging.onBackgroundMessage((m) => {
-  console.log("onBackgroundMessage", m);
-});
-messaging.onMessage((m) => {
-  console.log("onMessage", m);
-});
