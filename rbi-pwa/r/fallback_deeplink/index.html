@@ -7,12 +7,14 @@
     <script type="text/javascript">
 window.onload = function() {
 try {
-    console.log(window.location.search);
+    console.log('full link', window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
     var deeplink = urlParams.get('deeplink');
     deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+    console.log('deeplink', deeplink);
     var fallback = urlParams.get('fallback');
     fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
+    console.log('fallback', fallback);
 
     const link = document.createElement('a');
     link.setAttribute('href', deeplink);
