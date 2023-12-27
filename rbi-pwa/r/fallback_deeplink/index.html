@@ -6,26 +6,30 @@
           content="0; url=https://investrosbank.page.link/portfolioAnalyticscert">
     <script type="text/javascript">
 window.onload = function() {
-try {
-    console.log('full link', window.location.search);
-    const urlParams = new URLSearchParams(window.location.search);
-    var deeplink = urlParams.get('deeplink');
-    deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
-    console.log('deeplink', deeplink);
-    var fallback = urlParams.get('fallback');
-    fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-    console.log('fallback', fallback);
+    try {
+        const urlParsed = new URL(window.location);
+        console.log('urlParsed', urlParsed);
+        const urlParams = new URLSearchParams(urlParsed.search);
+        var deeplink = urlParams.get('deeplink');
+        console.log('deeplink', deeplink);
+        deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+        console.log('deeplink', deeplink);
+        var fallback = urlParams.get('fallback');
+        console.log('fallback', fallback);
+        fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
+        console.log('fallback', fallback);
 
-    const link = document.createElement('a');
-    link.setAttribute('href', deeplink);
-    document.body.appendChild(link);
-    link.click();
+        const link = document.createElement('a');
+        link.setAttribute('href', deeplink);
+        document.body.appendChild(link);
+        link.click();
 
-    const fallbackButton = document.getElementById('fallback_link');
-    fallbackButton.setAttribute('href', fallback);
-} catch (e) {
-    console.error(e);
-}
+        const fallbackButton = document.getElementById('fallback_link');
+        fallbackButton.setAttribute('href', fallback);
+
+    } catch (e) {
+        console.error(e);
+    }
 };
 
     </script>
