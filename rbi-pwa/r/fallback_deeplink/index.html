@@ -21,12 +21,6 @@ try {
 
     const fallbackButton = document.getElementById('fallback_link');
     fallbackButton.setAttribute('href', fallback);
-
-    setTimeout(function() {
-        if (!history.go(-1)) {
-            window.close();
-        }
-    }, 5000);
 } catch (e) {
     console.error(e);
 }
