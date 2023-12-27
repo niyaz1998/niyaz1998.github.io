@@ -27,6 +27,9 @@ window.onload = function() {
         const fallbackButton = document.getElementById('fallback_link');
         fallbackButton.setAttribute('href', fallback);
 
+        const customButton = document.getElementById('custom_link');
+        customButton.setAttribute('href', deeplink);
+
     } catch (e) {
         console.error(e);
     }
@@ -36,6 +39,6 @@ window.onload = function() {
     <title>Porfolio analytics redirect</title>
 </head>
 <body>
-Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a>.
+Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a> или  <a id="custom_link">эту ссылку</a>.
 </body>
 </html>
