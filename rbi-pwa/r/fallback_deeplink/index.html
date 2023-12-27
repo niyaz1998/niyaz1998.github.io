@@ -12,11 +12,11 @@ window.onload = function() {
         const urlParams = new URLSearchParams(urlParsed.search);
         var deeplink = urlParams.get('deeplink');
         console.log('deeplink', deeplink);
-        deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
+        deeplink = decodeURIComponent((deeplink + ''));
         console.log('deeplink', deeplink);
         var fallback = urlParams.get('fallback');
         console.log('fallback', fallback);
-        fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
+        fallback = decodeURIComponent((fallback + ''));
         console.log('fallback', fallback);
 
         const link = document.createElement('a');
