@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh"
+          content="0; url=https://investrosbank.page.link/portfolioAnalyticscert">
+    <script type="text/javascript">
+        window.onload = function() {
+            try {
+                const urlParsed = new URL(window.location);
+                console.log('urlParsed', urlParsed);
+                const urlParams = new URLSearchParams(urlParsed.search);
+                var deeplink = urlParams.get('deeplink');d
+                deeplink = decodeURIComponent((deeplink + ''));
+                console.log('deeplink', deeplink);
+                var fallback = urlParams.get('fallback');
+                fallback = decodeURIComponent((fallback + ''));
+                console.log('fallback', fallback);
+
+                const link = document.createElement('a');
+                link.setAttribute('href', deeplink);
+                document.body.appendChild(link);
+                link.click();
+
+                const fallbackButton = document.getElementById('fallback_link');
+                fallbackButton.setAttribute('href', fallback);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+    </script>
+    <title>Porfolio analytics redirect</title>
+</head>
 <body>
-<script type="text/javascript">
-window.onload = function() {
-    function isCustomProtocolSupported(protocol) {
-      return navigator.protocol === protocol + ":";
-    }
-
-    console.log(window.location.search);
-    const urlParams = new URLSearchParams(window.location.search);
-    var deeplink = urlParams.get('deeplink');
-    console.log(deeplink);
-    deeplink = decodeURIComponent((deeplink + '').replace(/\+/g, '%20'));
-    console.log(deeplink);
-    var fallback = urlParams.get('fallback');
-    console.log(fallback);
-    fallback = decodeURIComponent((fallback + '').replace(/\+/g, '%20'));
-    console.log(fallback);
-    console.log('isCustomProtocolSupported', isCustomProtocolSupported('bank100000000012'));
-
-    if (isCustomProtocolSupported('bank100000000012')) {
-        const link = document.createElement('a');
-        link.setAttribute('href', deeplink);
-        document.body.appendChild(link);
-        link.click();
-    } else {
-        window.location.replace(fallback);
-    }
-};
-</script>
+    <p style="padding: 10% 10%; font-size: large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a>.</p>
+    <p style="padding: 0% 10%; font-size: medium; text-align: center">Можете закрыть эту страницу после пополнения</p>
 </body>
 </html>
