@@ -10,7 +10,7 @@
                 const urlParsed = new URL(window.location);
                 console.log('urlParsed', urlParsed);
                 const urlParams = new URLSearchParams(urlParsed.search);
-                var deeplink = urlParams.get('deeplink');
+                var deeplink = urlParams.get('deeplink');d
                 deeplink = decodeURIComponent((deeplink + ''));
                 console.log('deeplink', deeplink);
                 var fallback = urlParams.get('fallback');
@@ -32,7 +32,7 @@
     <title>Porfolio analytics redirect</title>
 </head>
 <body>
-    <p style="padding: 10% 10%; font-size: large;">Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a>.</p>
-    <p style="padding: 10%; font-size: medium;">Можете закрыть эту страницу после пополнения</p>
+    <p style="padding: 10% 10%; font-size: large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a>.</p>
+    <p style="padding: 0% 10%; font-size: medium; text-align: center">Можете закрыть эту страницу после пополнения</p>
 </body>
 </html>
