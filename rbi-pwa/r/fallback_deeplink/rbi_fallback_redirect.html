@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        window.onload = function() {
+            try {
+                const urlParsed = new URL(window.location);
+                console.log('urlParsed', urlParsed);
+                const urlParams = new URLSearchParams(urlParsed.search);
+                var deeplink = urlParams.get('deeplink');
+                deeplink = decodeURIComponent((deeplink + ''));
+                console.log('deeplink', deeplink);
+                var fallback = urlParams.get('fallback');
+                fallback = decodeURIComponent((fallback + ''));
+                console.log('fallback', fallback);
+
+                const link = document.createElement('a');
+                link.setAttribute('href', deeplink);
+                document.body.appendChild(link);
+                link.click();
+
+                const fallbackButton = document.getElementById('fallback_link');
+                fallbackButton.setAttribute('href', fallback);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+    </script>
+    <title>Porfolio analytics redirect</title>
+</head>
+<body>
+    <p style="padding: 10% 10%; font-size: xx-large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link">эту ссылку</a>.</p>
+    <p style="padding: 0% 10%; font-size: x-large; text-align: center">Если эта страница не закрылась автоматически после пополнения счета, то вы можете закрыть её, смахнув влево.</p>
+</body>
+</html>
