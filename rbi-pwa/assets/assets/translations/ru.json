@@ -620,6 +620,8 @@
   "whatToBuy": "Что купить?",
   "observeAll": "Смотреть все",
   "lotsAtCount": "лот {count} шт.",
+  "accountForCurrencyIncome": "Счёт для {currency} зачислений",
+  "accountForCurrencyWithdraw": "Счёт для вывода\nсредств в {currency}",
   "expensiveAdjective": "Дорогие",
   "cheapAdjective": "Дешевые",
   "yesterdayRised": "Рост",

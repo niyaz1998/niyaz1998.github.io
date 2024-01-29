@@ -6,6 +6,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
+  console.log("saved add to home screen deferredPrompt");
 });
 
 function isDeferredNotNull() {
