@@ -297,6 +297,7 @@
   "toTopUpAccountGoToRosbankOnline": "Для пополнения счёта перейдите в приложение Росбанк Онлайн",
   "confirmAction": "Подтвердите действие",
   "toGoBackToRosbankInvestPressButton": "Для перехода обратно в Росбанк Инвест нажмите на кнопку",
+  "youCanReturnToRosbankInvest": "Вы можете вернуться в Росбанк Инвест",
   "continue": "Продолжить",
   "topUpOwnBrokerageAccount": "Пополнение собственного брокерского счёта",
   "unableToConnect": "Не удается установить соединение",
@@ -637,9 +638,14 @@
   "toHundred": "До сотых",
   "toStep": "До шага",
   "noRound": "Без округления",
+  "saveQR": "Сохранить QR-код",
+  "shareQR": "Поделиться QR-кодом",
+  "howToUseQR": "Как использовать QR-код?",
+  "buildQRErrorMessage": "Возникла ошибка в генерации QR-кода",
   "changePersonalData": "Изменение моих данных",
   "changePersonalDataStep1": "Шаг 1.\nИзмените данные в Росбанк Онлайн в своем профиле в разделе \"Личные данные\"",
   "changePersonalDataStep2": "Шаг 2.\nВ чате Росбанк Онлайн вы получите сообщение об успешном измении данных",
   "changePersonalDataStep3": "Шаг 3.\nЗайдите в приложение Росбанк Инвест и завершите открытие брокерского счета - данные будут обновлены",
-  "toChangeDataGoToRosbankOnline": "Для изменения данных перейдите в приложение\nРосбанк Онлайн"
+  "toChangeDataGoToRosbankOnline": "Для изменения данных перейдите в приложение\nРосбанк Онлайн",
+  "copied":"Скопировано"
 }

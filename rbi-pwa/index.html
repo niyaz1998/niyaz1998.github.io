@@ -24,7 +24,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1296616593";
+    const serviceWorkerVersion = "2202172481";
     </script>
 
     <!-- This script adds the flutter initialization JS code -->
@@ -52,7 +52,6 @@
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        src: "main.dart.js?version=" + serviceWorkerVersion, // добавление версии, нужно для перезагрузки файла main.dart.js на стороне клиента после его обновления
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();

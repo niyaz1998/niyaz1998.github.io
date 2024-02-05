@@ -22,8 +22,8 @@ window.createCredentials = async function () {
         const credentials = await navigator.credentials.create(options);
         return !!credentials;
     } catch (error) {
-        console.log(error.message);
-        return false;
+        console.log("Ошибка авторизации ${error.message}" );
+        throw new Error(error.message);
     }
 };
 
