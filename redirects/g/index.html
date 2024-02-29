@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Брокерский счёт. Инвестиции.">
+    <script type="text/javascript">
+        window.onload = function() {
+            try {
+                const link = document.createElement('a');
+                link.setAttribute('href', 'rbinvest://navigation/mainPage/quotesPage');
+                document.body.appendChild(link);
+                link.click();
+            } catch (e) {
+                console.error(e);
+            }
+        };
+    </script>
+    <title>Rosbank Invest redirect</title>
+</head>
+<body>
+<p style="padding: 10% 10%; font-size: xx-large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link" href="https://investrosbank.page.link/welcome">эту ссылку</a>.</p>
+</body>
+</html>
