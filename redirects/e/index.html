@@ -6,8 +6,9 @@
     <script type="text/javascript">
         window.onload = function() {
             try {
+                var deeplink = "intent://rbinvest.mobile/#Intent;scheme=rbinvest;package=ru.rb.invest;S.browser_fallback_url=https%3A%2F%2Finvestrosbank.page.link%2Fwelcome;end";
                 const link = document.createElement('a');
-                link.setAttribute('href', 'https://investrosbank.page.link/welcome');
+                link.setAttribute('href', deeplink);
                 document.body.appendChild(link);
                 link.click();
             } catch (e) {
@@ -18,6 +19,6 @@
     <title>Rosbank Invest redirect</title>
 </head>
 <body>
-<p style="padding: 10% 10%; font-size: xx-large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link" href="https://investrosbank.page.link/welcome">эту ссылку</a>.</p>
+<p style="padding: 10% 10%; font-size: xx-large; text-align: center;">Если вас не перенаправило автоматически, откройте <a id="fallback_link" href="intent://rbinvest.mobile/#Intent;scheme=rbinvest;package=ru.rb.invest;S.browser_fallback_url=https%3A%2F%2Finvestrosbank.page.link%2Fwelcome;end">эту ссылку</a>.</p>
 </body>
 </html>
