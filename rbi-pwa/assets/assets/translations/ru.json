@@ -20,6 +20,8 @@
   "couponDescription": "Регулярная выплата, которую получает владелец облигации",
   "paymentsSum": "Сумма выплат",
   "couponsPayed": "Выплачено купонов",
+  "phoneCall": "Позвонить",
+  "chooseSupportContactMethod": "Выберите удобный метод связи с поддержкой",
   "rate": "Ставка",
   "dividends": "Дивиденды",
   "dividendsInfoMessage": "Для начисления дивидендов купите акцию не позднее, чем за 1 день до даты отсечки.",
@@ -113,6 +115,8 @@
   "discard": "Сбросить",
   "myHelper": "Мой помощник",
   "noInstrumentsInFavorite": "Нет инструментов\nв избранном",
+  "instrumentRemovedFromFavorites": "Инструмент удалён из избранного",
+  "instrumentAddedToFavorites": "Инструмент добавлен в избранное",
   "favorite": "Избранное",
   "portfolioAnalytics": "Аналитика портфеля",
   "filter": "Фильтр",
@@ -168,6 +172,8 @@
   "option": "Опцион",
   "index": "Индекс",
   "currencyPair": "Валютная пара",
+  "currencyPairs": "Валютные пары",
+  "other": "Другие",
   "money": "Денежные средства",
   "stockGenitive": "Акций",
   "bondGenitive": "Облигаций",
@@ -194,7 +200,7 @@
   "brokerageRegulations": "Регламент брокерского обслуживания",
   "personalDataProcessingPolicy": "Политика обработки персональных данных",
   "termsOfAgreementOnComprehensiveBankingServices": "Условия Договора о комплексном банковском обслуживании",
-  "informationAboutFinancialInstrumentsAndRelatedRisks": "Информация о финансовых инструментах и связанных с ними рисках",
+  "informationAboutFinancialInstrumentsAndRelatedRisks": "Информационные документы о финансовых инструментах и связанных с ними рисках",
   "rosbankIdCaps": "РОСБАНК ID",
   "today": "Сегодня",
   "yesterday": "Вчера",
@@ -223,61 +229,120 @@
   "pinCodesDoNotMatch": "PIN-коды не совпадают",
   "atMarketPrice_": "по рыночной цене",
   "favoriteInstruments": "Избранные инструменты",
+  "paperPlural5":  "Бумаг",
   "paperPlural": {
     "zero": "Бумаг",
     "one": "Бумага",
     "two": "Бумаги",
     "few": "Бумаги",
-    "many": "Бумаг"
+    "many": "Бумаг",
+    "other": "Бумаг"
   },
+  "lotGenetivePlural5": "Лотов",
   "lotGenetivePlural": {
     "zero": "Лотов",
     "one": "Лот",
     "two": "Лота",
     "few": "Лота",
-    "many": "Лотов"
+    "many": "Лотов",
+    "other": "Лотов"
   },
+  "stockPlural5": "Акций",
   "stockPlural": {
     "zero": "Акций",
     "one": "Акция",
     "two": "Акции",
     "few": "Акции",
-    "many": "Акций"
+    "many": "Акций",
+    "other": "Акций"
   },
+  "bondPlural5": "Облигаций",
   "bondPlural": {
     "zero": "Облигаций",
     "one": "Облигация",
     "two": "Облигации",
     "few": "Облигации",
-    "many": "Облигаций"
+    "many": "Облигаций",
+    "other": "Облигаций"
   },
+  "euroBondPlural5": "Еврооблигаций",
   "euroBondPlural": {
     "zero": "Еврооблигаций",
     "one": "Еврооблигация",
     "two": "Еврооблигации",
     "few": "Еврооблигации",
-    "many": "Еврооблигаций"
+    "many": "Еврооблигаций",
+    "other": "Еврооблигаций"
   },
+  "dayPlural5": "Дней",
   "dayPlural": {
     "zero": "Дней",
     "one": "День",
     "two": "Дня",
     "few": "Дня",
-    "many": "Дней"
+    "many": "Дней",
+    "other": "Дней"
   },
   "pastPayments": {
     "zero": "Прошлых выплат",
     "one": "Прошлую выплату",
     "two": "Прошлые выплаты",
     "few": "Прошлые выплаты",
-    "many": "Прошлых выплат"
+    "many": "Прошлых выплат",
+    "other": "Прошлых выплат"
   },
   "futurePayments": {
     "zero": "Будущих выплат",
     "one": "Будущую выплату",
     "two": "Будущие выплаты",
     "few": "Будущие выплаты",
-    "many": "Будущих выплат"
+    "many": "Будущих выплат",
+    "other": "Будущих выплат"
+  },
+  "amount": "шт.",
+  "futuresPlural": {
+    "zero": "Фьючерсов",
+    "one": "Фьючерс",
+    "two": "Фьючерса",
+    "few": "Фьючерса",
+    "many": "Фьючерсов",
+    "other": "Фьючерсов"
+  },
+  "optionPlural5": "Опционов",
+  "optionPlural": {
+    "zero": "Опционов",
+    "one": "Опцион",
+    "two": "Опциона",
+    "few": "Опциона",
+    "many": "Опционов",
+    "other": "Опционов"
+  },
+  "genitiveBondPlural5": "Облигаций",
+  "genitiveBondPlural": {
+    "zero": "Облигации",
+    "one": "Облигации",
+    "two": "Облигаций",
+    "few": "Облигаций",
+    "many": "Облигаций",
+    "other": "Облигаций"
+  },
+  "genitiveFuturesPlural5": "Фьючерсов",
+  "genitiveFuturesPlural": {
+    "zero": "Фьючерсов",
+    "one": "Фьючерса",
+    "two": "Фьючерсов",
+    "few": "Фьючерсов",
+    "many": "Фьючерсов",
+    "other": "Фьючерсов"
+  },
+  "genitiveOptionPlural5": "Опционов",
+  "genitiveOptionPlural": {
+    "zero": "Опционов",
+    "one": "Опциона",
+    "two": "Опционов",
+    "few": "Опционов",
+    "many": "Опционов",
+    "other": "Опционов"
   },
   "pif": "ПИФ",
   "etf": "ETF",
@@ -382,13 +447,14 @@
   "noIWantToFinishTest": "Нет, я хочу закончить тест",
   "resultsWillNotBeSavedYouWillHaveToTakeTestAgain": "Результаты не сохранятся, вам придется проходить тест сначала",
   "takeTestAgain": "Пройти тест снова",
-  "goAway": "Уйти",
+  "later": "Позже",
   "test": "Тест",
   "passed": "Пройден",
   "notPassed": "Не пройден",
   "youCanTestAgain": "Вы можете пройти тест еще раз",
+  "accessWillOpenNexDay": "Доступ к инструменту откроется на следующий торговый день после успешного прохождения тестирования",
   "introducesRestrictionsOnFinancialInstruments": "С 1 октябрая 2021 года Федеральным законом №39-ФЗ “О рынке ценных бумаг” введены ограничения по ряду финансовых инструментов и сделок",
-  "unqualifiedInvestorsMustBeTestedToTradeComplexInstruments": "По требованию ЦБ РФ с 1 октября 2021 года для торговли сложными инструментами неквалифицированным инвесторам нужно пройти тестирование",
+  "unqualifiedInvestorsMustBeTestedToTradeComplexInstruments": "Тестирование проводится по требованию Федерального закона «О рынке ценных бумаг» от 22.04.1996 № 39-ФЗ ",
   "ifSuccessfulYouCanMakeTransactionsNextDay": "При успешном результате вы сможете совершать с ними сделки на следующий день",
   "profile": "Профиль",
   "takeTestToTradeComplexInstruments": "Пройдите тест для торговли сложными финансовыми инструментами",
@@ -442,7 +508,8 @@
   "chooseTheme": "Выберите тему",
   "feedbackSuccessfullySent": "Обратная связь успешно отправлена",
   "feedbackSendError": "Не удалось выполнить отправку формы. Попробуйте позднее",
-  "tradingOnMoscowExchangeIsSuspendedAtTheMoment": "Торги по данному инструменту на Московской бирже временно приостановлены",
+  "tradingOnMoscowExchangeIsSuspendedAtTheMoment": "Торги по данному инструменту на Московской бирже временно приостановлены",
+  "tradingThisCurrencyIsSuspendedAtTheMoment": "Прием поручений на операции с данной валютой приостановлен",
   "yieldToMaturity": "Доходность к погашению",
   "news": "Новости",
   "tomorrow": "Завтра",
@@ -463,13 +530,14 @@
   "agreementSigning": "Подписание договора",
   "onboardingAgreementSigningStepDesc": "Мы сформируем договор, с которым вы сможете ознакомиться и подписать онлайн",
   "accountCreation": "Создание счёта",
+  "accountWasNoFound": "Номер счета не был получен",
   "onboardingAccountCreationStepDesc": "Процесс может занять от нескольких часов до пары дней. Как только счёт будет открыт, мы уведомим вас по почте",
   "bankVisitRequired": "Требуется\n обращение в банк",
   "toRefreshPersonalData": "Для обновления персональных данных обратитесь в любое отделение банка",
   "appLogin": "Вход в приложение",
   "onboardingAppLoginStepDesc": "Вам осталось создать пин код, пополнить счёт и совершить первые сделки с Росбанк Инвест.",
   "fillFormToCreateAccount": "Заполните анкету для открытия счёта",
-  "contactInfo": "Информация для связи",
+  "contactInfoAndBrokerReport": "Информация для связи и отчетов брокера",
   "emailIsUnsecureNotified": "Я уведомлен(а), что электронная почта является незащищенным каналом связи",
   "wantToReceiveAddsAndNews": "Хочу получать рекламные и новостные материалы ",
   "reportLanguage": "Язык формирования отчётов",
@@ -477,7 +545,9 @@
   "toBrokerageAccount": "На брокерский счёт",
   "russian": "Русский",
   "english": "Английский",
-  "enterEmail": "Введите Email",
+  "enterOrCorrectEmail": "Введите Email или скорректируйте",
+  "confirmEmail": "Повторите ввод Email",
+  "emailsDoesntMatch": "Адреса эл.почты не совпадают",
   "chooseTariff": "Выберите тариф",
   "configureTariff": "Настройте ваш тариф",
   "depositoryProvidesServices": "Депозитарий предлагает широкий спектр услуг по проведению операций с ценными бумагами, обращающимися российском рынке.",
@@ -547,6 +617,7 @@
   "onboardingStatementDocLabel": "Заявление об условиях брокерского и депозитарного обслуживания на рынке ценных бумаг",
   "onboardingInvestorDocLabel": "Анкета депонента/инвестора - физического лица",
   "onboardingJoinDocLabel": "Заявление о присоединении к Регламенту брокерского обслуживания и ПАО РОСБАНК и депозитарному договору",
+  "onboardingNoticeDocLabel": "Информационный документ к брокерскому договору",
   "onboardingDocError": "Не получилось создать документы",
   "onboardingDocErrorTryAgain": "Возникла проблема при создании документа. Попробуйте повторить попытку.",
   "onboardingDocumentsSignTakesLong": "Из-за высокой нагрузки, время подписания может составить до 30 минут",
@@ -600,20 +671,6 @@
   "selectionsTopPriceDescription": "В подборку входят самые {direction} ценные бумаги на рынке",
   "selectionsPifsTitle": "Биржевые ПИФы",
   "selectionsPifsDescription": "В подборку входят бумаги, представляющие собой портфель разных активов, который управляется профессионалами",
-  "expensive": {
-    "zero": "Дорогих",
-    "one": "Дорогой",
-    "two": "Дорогих",
-    "few": "Дорогих",
-    "many": "Дорогих"
-  },
-  "cheap": {
-    "zero": "Дешевых",
-    "one": "Дешевый",
-    "two": "Дешевых",
-    "few": "Дешевых",
-    "many": "Дешевых"
-  },
   "selectionsDropsAndRisesTitle": "Падения и взлеты",
   "selectionsDropsAndRisesDescription": "В подборку входят акции, которые значительно {direction} за последние сутки",
   "rised": "Выросли",
@@ -630,6 +687,14 @@
   "sendToEmail": "Написать на почту",
   "quizEstimatedDuration": "≈15 минут",
   "quizQuestionsCount": "7 вопросов",
+  "accountHasNegativeBalance": "На счете отрицательный\nбаланс",
+  "negativeBalancePurpose":"Отрицательный остаток может быть\nв случае уплаты налогов,\nпри недостаточном балансе.",
+  "noAccountInSelectedCurrency":"У вас нет счета в этой валюте",
+  "youCanOpenAccountInRbOnline":"Вы можете открыть его\nв приложение Росбанк онлайн",
+  "itTakesAbout5Minutes":"Это займет приблизительно 5-10 минут",
+  "transferTakes3Days":"Перевод средств происходит в течение 3х банковских дней",
+  "incorrectTransferAmountError":"Введите корректную сумму перевода",
+  "notEnoughMoneyError":"Недостаточно средств для совершения операции",
   "installPWA": "Установить на устройство",
   "installPwaShare": "Для установки приложения на телефон нажмите иконку «Поделиться»",
   "absent": "Отсутсвует",
@@ -647,5 +712,7 @@
   "changePersonalDataStep2": "Шаг 2.\nВ чате Росбанк Онлайн вы получите сообщение об успешном измении данных",
   "changePersonalDataStep3": "Шаг 3.\nЗайдите в приложение Росбанк Инвест и завершите открытие брокерского счета - данные будут обновлены",
   "toChangeDataGoToRosbankOnline": "Для изменения данных перейдите в приложение\nРосбанк Онлайн",
-  "copied":"Скопировано"
+  "isinCopied": "ISIN инструмента скопирован",
+  "secureCodeCopied": "Код инструмента скопирован",
+  "copied": "Скопировано"
 }
