@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<script type="text/javascript">
-    window.onload = function() {
-        // Deep link to your app goes here
-        document.getElementById("l").src = "unlimit://onlinebank.unlimit.com/transaction_approval";
-
-        setTimeout(function() {
-            window.location = "https://onlinebank.unlimit.com/transaction_approval";
-        }, 500);
-    };
-</script>
-<iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+<iframe id="l" src="unlimit://onlinebank.unlimit.com/transaction_approval" width="1" height="1" style="visibility:hidden"></iframe>
+<a href="unlimit://onlinebank.unlimit.com/transaction_approval">Link to app</a>
 </body>
 </html>
