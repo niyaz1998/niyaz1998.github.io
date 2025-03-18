@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытие ссылки</title>
+</head>
+<body>
+<h2>Введите ссылку:</h2>
+<input type="text" id="urlInput" placeholder="Введите URL или диплинк" style="width: 300px;">
+<button onclick="openLink()">Открыть</button>
+
+<script>
+    function openLink() {
+        let url = document.getElementById('urlInput').value.trim();
+        if (url) {
+            if (!url.includes('://')) {
+                url = 'http://' + url;
+            }
+            window.location.href = url;
+            setTimeout(() => {
+                window.open(url, '_blank');
+            }, 100);
+        } else {
+            alert('Введите корректный URL или диплинк');
+        }
+    }
+</script>
+</body>
+</html>
