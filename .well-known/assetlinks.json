@@ -20,5 +20,16 @@
         "E7:C8:A7:89:3F:74:DB:0D:5D:DE:8E:C5:2D:98:33:0B:FD:97:BC:41:D4:65:1F:EB:1E:EE:39:5E:56:24:B4:30"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ru.tander.mdrive_app.dev",
+      "sha256_cert_fingerprints":
+      [
+        "D2:CE:20:61:5B:44:10:16:7D:C7:75:18:CC:DD:42:81:E9:37:97:7A:D7:FB:97:E2:D4:FD:ED:58:D6:24:23:93"
+      ]
+    }
   }
 ]
