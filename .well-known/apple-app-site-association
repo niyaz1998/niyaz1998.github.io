@@ -3,7 +3,7 @@
         "apps": [],
         "details": [{
             "appID": "Q7869WXVTW.ru.magnit.drivem",
-            "paths": ["/path-for-redirectionl/*"]
+            "paths": ["/*"]
         }]
     }
 }
